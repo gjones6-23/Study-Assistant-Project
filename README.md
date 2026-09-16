@@ -32,16 +32,6 @@ The user selects what they want to create, pastes their lecture notes, and types
 * **Java Scanner** — used for command line user input
 * **Git & GitHub** — used for version control and project hosting
 
-## Project Structure
-
-Study-Assistant-Project/
-├── src/
-│   └── StudyAssistant.java
-├── lib/
-│   └── Gson library/dependencies
-├── .gitignore
-└── README.md
-
 ## Setup
 
 ### 1. Java
