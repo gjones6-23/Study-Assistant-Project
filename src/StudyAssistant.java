@@ -124,6 +124,21 @@ public class StudyAssistant {
 
             JsonObject jsonResponse = JsonParser.parseString(response.body()).getAsJsonObject();
 
+            if (response.statusCode() >= 400) {
+                if (jsonResponse.has("error")) {
+                    String errorMessage = jsonResponse
+                            .getAsJsonObject("error")
+                            .get("message")
+                            .getAsString();
+
+                    System.out.println("API request failed: " + errorMessage);
+                } else {
+                    System.out.println("API request failed with status code: " + response.statusCode());
+                }
+
+                return;
+            }
+
             String studyGuide = jsonResponse
                     .getAsJsonArray("output")
                     .get(0)
